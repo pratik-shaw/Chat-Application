@@ -87,7 +87,7 @@ This project is a cutting-edge, cross-platform secure communications app designe
 
 ---
 
-## Round 1 Deliverables
+## Deliverables
 
 1. **Proof of Concept (POC):**  
    The basic secure communications app supports encrypted messaging and runs on Android, iOS, and desktop platforms.
