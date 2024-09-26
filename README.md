@@ -120,4 +120,4 @@ To get started with the project, follow these steps:
 1. **Clone the Repository:**
 
 ```bash
-git clone https://github.com/your-repo/secure-communications-app.git
+git clone https://github.com/pratik-shaw/Chat-Application.git
