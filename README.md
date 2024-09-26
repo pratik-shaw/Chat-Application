@@ -1,4 +1,4 @@
-# Secure Communications App - Hackathon Project
+# Encryted Chat Application
 
 ## Overview
 
