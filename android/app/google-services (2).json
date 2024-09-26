@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "53342651623",
+    "project_id": "encrypted-chat-applicati-a32c6",
+    "storage_bucket": "encrypted-chat-applicati-a32c6.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:53342651623:android:3406907d8e7db846494e42",
+        "android_client_info": {
+          "package_name": "com.project"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAj3Zg-U3a7J6MLZHit0zzNsJfn2vZ2Fy4"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
