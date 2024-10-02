@@ -1,36 +1,41 @@
 import React from 'react';
-import { Provider } from 'react-redux';
-import { store } from './redux/store';
-import { View, Text, StyleSheet } from 'react-native';
+import { NavigationContainer } from '@react-navigation/native';
+import { createStackNavigator } from '@react-navigation/stack';
+import { Provider as PaperProvider } from 'react-native-paper'; // If using React Native Paper for UI
+import { AuthProvider, useAuth } from './context/AuthContext'; // Use the updated AuthContext
+import HomeScreen from './screens/HomeScreen'; // Main home screen
+import LoginScreen from './screens/LoginScreen'; // Login screen
+import RegisterScreen from './screens/RegisterScreen'; // Register screen
+
+const Stack = createStackNavigator();
 
 const App = () => {
-  return (
-    <Provider store={store}>
-      <View style={styles.container}>
-        <Text style={styles.title}>Encrypted Chat Application</Text>
-        <Text style={styles.subtitle}>Secure your conversations</Text>
-      </View>
-    </Provider>
-  );
+    return (
+        <AuthProvider>
+            <PaperProvider>
+                <NavigationContainer>
+                    <MainNavigator />
+                </NavigationContainer>
+            </PaperProvider>
+        </AuthProvider>
+    );
 };
 
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    justifyContent: 'center',
-    alignItems: 'center',
-    backgroundColor: '#F0F0F0',
-  },
-  title: {
-    fontSize: 24,
-    fontWeight: 'bold',
-    color: '#333',
-  },
-  subtitle: {
-    fontSize: 16,
-    color: '#666',
-    marginTop: 10,
-  },
-});
+const MainNavigator = () => {
+    const { isSignedIn } = useAuth(); // Use the custom hook to get auth state
+
+    return (
+        <Stack.Navigator initialRouteName="Login">
+            {isSignedIn ? (
+                <Stack.Screen name="Home" component={HomeScreen} />
+            ) : (
+                <>
+                    <Stack.Screen name="Login" component={LoginScreen} />
+                    <Stack.Screen name="Register" component={RegisterScreen} />
+                </>
+            )}
+        </Stack.Navigator>
+    );
+};
 
 export default App;
